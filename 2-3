@@ -1,0 +1,58 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+class QuadraticEquation
+{
+public:
+	int a, b, c;
+
+	QuadraticEquation(int a1, int b1, int c1);
+
+	double D();
+	double x1();
+	double x2();
+
+};
+
+QuadraticEquation::QuadraticEquation(int a1, int b1, int c1)
+{
+	a = a1;
+	b = b1;
+	c = c1;
+}
+
+double QuadraticEquation::D() 
+{
+	double d;
+	d = pow(b, 2) - a * c;
+	
+	return d;
+};
+
+double QuadraticEquation::x1()
+{
+	double x;
+	x = (-(b) - sqrt(D())) / 2 * a;
+
+	return x;
+};
+
+double QuadraticEquation::x2()
+{
+	double x;
+	x = (-(b) + sqrt(D())) / 2 * a;
+
+	return x;
+};
+int main()
+{
+	QuadraticEquation q1(2, 4, 5);
+
+	cout << "D = " << q1.D() << endl;
+	cout << "x1 = " << q1.x1() << endl;
+	cout << "x2 = " << q1.x2() << endl;
+
+    return 0;
+}
