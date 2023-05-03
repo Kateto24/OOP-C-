@@ -1,0 +1,34 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+class Incomes
+{
+public:
+	float income;
+
+	Incomes(float incomes);
+
+	float YearIncome();
+};
+
+Incomes::Incomes(float incomes)
+{
+	income = incomes;
+}
+
+float Incomes::YearIncome()
+{
+	return 12 * income;
+};
+
+int main()
+{
+	Incomes i(1200.33);
+
+	float yearIn = i.YearIncome();
+	cout << "The year income is: " << setprecision(2) << fixed << yearIn << endl;
+
+    return 0;
+}
