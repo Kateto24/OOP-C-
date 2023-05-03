@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+class Distance
+{
+public:
+	double x, y;
+
+	Distance(double x1, double y1);
+	
+	double Calc();
+};
+
+Distance::Distance(double x1, double y1)
+{
+	x = x1;
+	y = y1;
+}
+
+double Distance::Calc()
+{
+	return y - x;
+}
+
+int main()
+{
+	Distance d1(5, 10);
+
+	double distance = d1.y - d1.x;
+	cout << distance << endl;
+
+	cout << d1.Calc() << endl;
+
+    return 0;
+}
