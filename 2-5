@@ -1,0 +1,100 @@
+#include <iostream>
+
+using namespace std;
+
+class Time
+{
+public:
+
+	int hours, minutes;
+
+	Time(int hour, int min);
+
+	bool TestTime();
+};
+
+Time::Time(int hour, int min)
+{
+	hours = hour;
+	minutes = min;
+}
+
+bool Time::TestTime()
+{
+	if (hours < 0 || hours > 24)
+	{
+		return 0;
+	}
+	else
+	{
+		return 1;
+	}
+};
+
+int main()
+{
+	Time t (15, 25);
+
+	if (t.TestTime() == 0)
+	{
+		cout << "Error time! " << endl;
+	}
+	else
+	{
+		cout << "The time in 24 hours format is: " << endl;
+		cout << t.hours << ":" << t.minutes << endl;
+
+		cout << endl;
+		cout << "The time in 12 hours format is: " << endl;
+		int newT;
+		switch (t.hours)
+		{
+		case 0:
+			newT = 0;
+			break;
+		case 13:
+			newT = 1;
+			break;
+		case 14:
+			newT = 2;
+			break;
+		case 15:
+			newT = 3;
+			break;
+		case 16:
+			newT = 4;
+			break;
+		case 17:
+			newT = 5;
+			break;
+		case 18:
+			newT = 6;
+			break;
+		case 19:
+			newT = 7;
+			break;
+		case 20:
+			newT = 8;
+			break;
+		case 21:
+			newT = 9;
+			break;
+		case 22:
+			newT = 10;
+			break;
+		case 23:
+			newT = 11;
+			break;
+		case 24:
+			newT = 12;
+			break;
+		default:
+			newT = t.hours;
+			break;
+		}
+
+		cout << newT << ":" << t.minutes << endl;
+	}
+
+	return 0;
+}
