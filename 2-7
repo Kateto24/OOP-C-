@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+class Parallelepiped
+{
+public:
+	int a, b, c;
+
+	Parallelepiped(int a1, int b1, int c1);
+    
+	int V();
+
+};
+
+Parallelepiped::Parallelepiped(int a1, int b1, int c1)
+{
+	a = a1;
+	b = b1;
+	c = c1;
+}
+
+int Parallelepiped::V()
+{
+	return a * b * c;
+};
+
+int main()
+{
+	Parallelepiped p(5, 6, 7);
+
+	cout << "The volume of theparallelepiped is: " << p.V() << endl;
+
+    return 0;
+}
